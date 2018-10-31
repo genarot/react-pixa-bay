@@ -27,13 +27,15 @@ class App extends Component {
       return res.json()
     })
     .then( resultado => {
-      this.setTimeout((resultado) => {
-        
+      console.log(resultado);
+      
+      setTimeout(() => {
+        // console.log(resultado);
         this.setState({
            images: resultado.hits,
            cargando: false
          })
-      }, 500);
+      }, 1500);
     })
     .catch( err => {
       this.setState({
